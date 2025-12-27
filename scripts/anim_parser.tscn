@@ -1,0 +1,1858 @@
+[gd_scene load_steps=71 format=3 uid="uid://nmi4sdvfw60r"]
+
+[ext_resource type="Script" uid="uid://dhi0hgf6f431m" path="res://scripts/anim_parser.gd" id="1_2ps4w"]
+[ext_resource type="Texture2D" uid="uid://bad2xxu5h20l6" path="res://anim_data/Double-Anim.png" id="2_kceyo"]
+[ext_resource type="Texture2D" uid="uid://ckbkgmwht6kgv" path="res://anim_data/Walk-Anim.png" id="3_ksq1f"]
+[ext_resource type="Texture2D" uid="uid://bdlfsgc4oxnnr" path="res://anim_data/Attack-Anim.png" id="4_bgqdo"]
+[ext_resource type="Texture2D" uid="uid://bt5jtncr5pgxx" path="res://anim_data/Shoot-Anim.png" id="5_g6k5w"]
+[ext_resource type="Texture2D" uid="uid://r3evfy0n118m" path="res://anim_data/Shake-Anim.png" id="6_4ha5g"]
+[ext_resource type="Texture2D" uid="uid://dwd72s3r52txj" path="res://anim_data/Sleep-Anim.png" id="7_frer8"]
+[ext_resource type="Texture2D" uid="uid://vcwctsyloeja" path="res://anim_data/Hurt-Anim.png" id="8_xcuqt"]
+[ext_resource type="Texture2D" uid="uid://cnvudphjmye25" path="res://anim_data/Idle-Anim.png" id="9_b6tqf"]
+[ext_resource type="Texture2D" uid="uid://cr05yweccqgwi" path="res://anim_data/Swing-Anim.png" id="10_l60ef"]
+[ext_resource type="Texture2D" uid="uid://dqg22bo6d1p0j" path="res://anim_data/Hop-Anim.png" id="11_bdtdv"]
+[ext_resource type="Texture2D" uid="uid://bg0v5ua5q6xbo" path="res://anim_data/Charge-Anim.png" id="12_mg2pa"]
+[ext_resource type="Texture2D" uid="uid://b8rxh3qkhwk5t" path="res://anim_data/Rotate-Anim.png" id="13_8ppy6"]
+[ext_resource type="Texture2D" uid="uid://cvt7vngh6cysj" path="res://anim_data/EventSleep-Anim.png" id="14_74uyp"]
+[ext_resource type="Texture2D" uid="uid://cpbv2n8hb62yi" path="res://anim_data/Wake-Anim.png" id="15_x27hm"]
+[ext_resource type="Texture2D" uid="uid://cjuntwenapbfm" path="res://anim_data/Eat-Anim.png" id="16_dj1kr"]
+[ext_resource type="Texture2D" uid="uid://td3wglqemhvn" path="res://anim_data/Tumble-Anim.png" id="17_asywe"]
+[ext_resource type="Texture2D" uid="uid://dup11766dboks" path="res://anim_data/Pose-Anim.png" id="18_hf65p"]
+[ext_resource type="Texture2D" uid="uid://b5yafeawbn8cr" path="res://anim_data/Pull-Anim.png" id="19_hw48n"]
+[ext_resource type="Texture2D" uid="uid://cmq8iqjlqso0y" path="res://anim_data/Pain-Anim.png" id="20_7yt3k"]
+[ext_resource type="Texture2D" uid="uid://crccv25kttvcw" path="res://anim_data/Float-Anim.png" id="21_xufmn"]
+[ext_resource type="Texture2D" uid="uid://v77jvids1tap" path="res://anim_data/DeepBreath-Anim.png" id="22_thov3"]
+[ext_resource type="Texture2D" uid="uid://gecbac3xn2io" path="res://anim_data/Nod-Anim.png" id="23_o3kub"]
+[ext_resource type="Texture2D" uid="uid://dip5382t3jaak" path="res://anim_data/Sit-Anim.png" id="24_4wob3"]
+[ext_resource type="Texture2D" uid="uid://d4bjosjlroo0m" path="res://anim_data/LookUp-Anim.png" id="25_y4ccw"]
+[ext_resource type="Texture2D" uid="uid://yst7h7tntgmi" path="res://anim_data/Sink-Anim.png" id="26_42c4q"]
+[ext_resource type="Texture2D" uid="uid://101mgumgvt0c" path="res://anim_data/Trip-Anim.png" id="27_rxid8"]
+[ext_resource type="Texture2D" uid="uid://b3y8tag2kk6sc" path="res://anim_data/Laying-Anim.png" id="28_sjhds"]
+[ext_resource type="Texture2D" uid="uid://dflrq4cmsh58w" path="res://anim_data/LeapForth-Anim.png" id="29_nv1lx"]
+[ext_resource type="Texture2D" uid="uid://bkryxvdjhmuik" path="res://anim_data/Head-Anim.png" id="30_aycdp"]
+[ext_resource type="Texture2D" uid="uid://vpfxppcpgq3w" path="res://anim_data/Cringe-Anim.png" id="31_mbmxo"]
+[ext_resource type="Texture2D" uid="uid://do4xyob6i24c2" path="res://anim_data/LostBalance-Anim.png" id="32_u5ttv"]
+[ext_resource type="Texture2D" uid="uid://bvy5mq7wc4hrr" path="res://anim_data/TumbleBack-Anim.png" id="33_fqndf"]
+[ext_resource type="Texture2D" uid="uid://kf74325jwy1v" path="res://anim_data/Faint-Anim.png" id="34_vj2xq"]
+[ext_resource type="Texture2D" uid="uid://cnjx7pcpgpqwi" path="res://anim_data/HitGround-Anim.png" id="35_olv06"]
+
+[sub_resource type="Animation" id="Animation_ftb5h"]
+length = 0.46666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("4_bgqdo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_ab6mx"]
+length = 0.33333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("12_mg2pa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_ywpo8"]
+length = 0.16666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("31_mbmxo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_siytn"]
+length = 1.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("22_thov3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_m07a2"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("2_kceyo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [16]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.25, 0.3, 0.35, 0.38333333, 0.43333334, 0.46666667, 0.5, 0.53333336, 0.56666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_4j1l7"]
+length = 0.46666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("16_dj1kr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.23333333, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_7jjqn"]
+length = 1.0833334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("14_74uyp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_8l245"]
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("34_vj2xq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.33333334, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_65gal"]
+length = 0.8333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("21_xufmn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_7copa"]
+length = 0.06666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("30_aycdp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3ask0"]
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("35_olv06")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.43333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_xjfif"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("11_bdtdv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.05, 0.083333336, 0.13333334, 0.2, 0.26666668, 0.31666666, 0.35, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_05o8r"]
+length = 0.16666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("8_xcuqt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_noikb"]
+length = 0.8666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("9_b6tqf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ceuh6"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("28_sjhds")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lxwdg"]
+length = 0.23333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("29_nv1lx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.11666667, 0.13333334, 0.16666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_70rtj"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("25_y4ccw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_ydva3"]
+length = 0.26666668
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("32_u5ttv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_cc873"]
+length = 0.33333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("23_o3kub")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_7m13d"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("20_7yt3k")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.083333336, 0.1, 0.11666667, 0.15, 0.16666667, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_dngps"]
+length = 0.36666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("18_hf65p")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.15, 0.2, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_8lk0t"]
+length = 1.2666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("19_hw48n")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.53333336, 0.73333335, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_yav5i"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("13_8ppy6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_mib2t"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("6_4ha5g")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_kch1a"]
+length = 0.46666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("5_g6k5w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.26666668, 0.33333334, 0.4, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_0ac75"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("26_42c4q")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_mlb7t"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("24_4wob3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_o2v60"]
+length = 1.0833334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("7_frer8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_0bp1t"]
+length = 0.26666668
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("10_l60ef")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.05, 0.083333336, 0.11666667, 0.16666667, 0.2, 0.23333333, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_ai22e"]
+length = 0.36666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("27_rxid8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_r8jle"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("17_asywe")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_4ypwi"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("33_fqndf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_emm2b"]
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("15_x27hm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.2, 0.4, 0.46666667, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_kj3as"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("3_ksq1f")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("/root/@EditorNode@18836/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@30/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@113/MainScreen/@CanvasItemEditor@10331/@VSplitContainer@10138/@HSplitContainer@10140/@HSplitContainer@10142/@Control@10143/@SubViewportContainer@10144/@SubViewport@10145/Main/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ngcdt"]
+_data = {
+&"Attack": SubResource("Animation_ftb5h"),
+&"Charge": SubResource("Animation_ab6mx"),
+&"Cringe": SubResource("Animation_ywpo8"),
+&"DeepBreath": SubResource("Animation_siytn"),
+&"Double": SubResource("Animation_m07a2"),
+&"Eat": SubResource("Animation_4j1l7"),
+&"EventSleep": SubResource("Animation_7jjqn"),
+&"Faint": SubResource("Animation_8l245"),
+&"Float": SubResource("Animation_65gal"),
+&"Head": SubResource("Animation_7copa"),
+&"HitGround": SubResource("Animation_3ask0"),
+&"Hop": SubResource("Animation_xjfif"),
+&"Hurt": SubResource("Animation_05o8r"),
+&"Idle": SubResource("Animation_noikb"),
+&"Laying": SubResource("Animation_ceuh6"),
+&"LeapForth": SubResource("Animation_lxwdg"),
+&"LookUp": SubResource("Animation_70rtj"),
+&"LostBalance": SubResource("Animation_ydva3"),
+&"Nod": SubResource("Animation_cc873"),
+&"Pain": SubResource("Animation_7m13d"),
+&"Pose": SubResource("Animation_dngps"),
+&"Pull": SubResource("Animation_8lk0t"),
+&"Rotate": SubResource("Animation_yav5i"),
+&"Shake": SubResource("Animation_mib2t"),
+&"Shoot": SubResource("Animation_kch1a"),
+&"Sink": SubResource("Animation_0ac75"),
+&"Sit": SubResource("Animation_mlb7t"),
+&"Sleep": SubResource("Animation_o2v60"),
+&"Swing": SubResource("Animation_0bp1t"),
+&"Trip": SubResource("Animation_ai22e"),
+&"Tumble": SubResource("Animation_r8jle"),
+&"TumbleBack": SubResource("Animation_4ypwi"),
+&"Wake": SubResource("Animation_emm2b"),
+&"Walk": SubResource("Animation_kj3as")
+}
+
+[node name="Main" type="Node2D" unique_id=1136955559]
+script = ExtResource("1_2ps4w")
+xml_path = "res://anim_data/AnimData.xml"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=845945931]
+texture = ExtResource("4_bgqdo")
+hframes = 11
+vframes = 8
+region_rect = Rect2(331.1106, 0, 64, 72)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=109351953]
+libraries = {
+&"": SubResource("AnimationLibrary_ngcdt")
+}
