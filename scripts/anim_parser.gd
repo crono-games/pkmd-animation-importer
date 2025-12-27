@@ -109,7 +109,7 @@ func build_animation(
 
 	var time := 0.0
 	for i in anim_data.durations.size():
-		anim.track_insert_key(frame_track, time, i)
+		anim.track_insert_key(frame_track, time, i, 0)
 		time += anim_data.durations[i] / 60.0
 
 	anim.length = time
