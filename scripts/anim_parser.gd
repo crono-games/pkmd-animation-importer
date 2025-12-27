@@ -14,11 +14,9 @@ func import_all_anims():
 	
 	for anim_data in anims:
 		var tex_path = texture_path_from_anim_name(xml_path, anim_data.name)
-		print("Cargando:", tex_path)
 
 		var texture := load(tex_path)
 		if texture == null:
-			push_error("No se encontró la textura: " + tex_path)
 			continue
 		setup_sprite(sprite, anim_data, texture)
 		build_animation(anim_player, anim_lib, sprite, anim_data, texture)
