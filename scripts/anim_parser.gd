@@ -7,6 +7,13 @@ extends Node2D
 @onready var sprite := $Sprite2D
 @onready var anim_player := $AnimationPlayer
 
+var sprites_with_directions = ["Attack", "Charge", "Double", "EventSleep",
+	"Faint", "Float", "Head", "Hop", "Hurt", "Idle", "Laying", "Nod", "Pain",
+	"Pose", "Rotate", "Shake", "Shoot", "Swing", "Trip", "Wake", "Walk"]
+
+var direction_sequence = ["Down", "DownRight", "Right", "UpRight", "Up",
+	"UpLeft", "Left", "DownLeft"]
+
 func import_all_anims():
 	var anims := parse_anim_xml(xml_path)
 	
@@ -18,8 +25,17 @@ func import_all_anims():
 		var texture := load(tex_path)
 		if texture == null:
 			continue
-		setup_sprite(sprite, anim_data, texture)
-		build_animation(anim_player, anim_lib, sprite, anim_data, texture)
+
+		# Check if they have direction
+		if sprites_with_directions.find(anim_data.name) != -1:
+			# It has eight direction that needs to be interpreted separately.
+			for i in direction_sequence.size():
+				setup_sprite(sprite, anim_data, texture)
+				build_animation(anim_player, anim_lib, sprite, anim_data,
+					texture, i, "_" + direction_sequence[i])
+		else: # If no direction, do this
+			setup_sprite(sprite, anim_data, texture)
+			build_animation(anim_player, anim_lib, sprite, anim_data, texture)
 
 func parse_anim_xml(path: String) -> Array:
 	var parser := XMLParser.new()
@@ -83,7 +99,9 @@ func build_animation(
 	player: AnimationPlayer, anim_lib : AnimationLibrary,
 	sprite: Sprite2D,
 	anim_data: Dictionary,
-	texture: Texture2D
+	texture: Texture2D,
+	skip_frame: int = 0,
+	name_postfix: String = ""
 ) -> void:
 
 	var anim := Animation.new()
@@ -109,11 +127,11 @@ func build_animation(
 
 	var time := 0.0
 	for i in anim_data.durations.size():
-		anim.track_insert_key(frame_track, time, i, 0)
+		anim.track_insert_key(frame_track, time, i + (cols * skip_frame), 0)
 		time += anim_data.durations[i] / 60.0
 
 	anim.length = time
-	anim_lib.add_animation(anim_data.name, anim)
+	anim_lib.add_animation(anim_data.name + name_postfix, anim)
 
 
 func time_at_frame(anim_data: Dictionary, frame: int) -> float:
